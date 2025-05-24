@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -201,17 +201,17 @@ const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = window.innerWidth > 768 ? 3 : 1;
   
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => 
       prevIndex + itemsPerPage >= testimonials.length ? 0 : prevIndex + 1
     );
-  };
+  }, [itemsPerPage, testimonials.length]);
   
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => 
       prevIndex === 0 ? testimonials.length - itemsPerPage : prevIndex - 1
     );
-  };
+  }, [itemsPerPage, testimonials.length]);
   
   // Auto-slide effect
   useEffect(() => {
@@ -220,7 +220,7 @@ const Testimonials: React.FC = () => {
     }, 5000);
     
     return () => clearInterval(intervalId);
-  }, [currentIndex, nextSlide]);
+  }, [nextSlide]);
   
   // Get visible testimonials
   const visibleTestimonials = () => {
