@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const AboutContainer = styled.section`
   background-color: white;
   padding: 8rem 0;
+  overflow-x: hidden;
+  width: 100%;
 `;
 
 const StraightTalkSection = styled(motion.div)`
@@ -94,15 +96,26 @@ const CommitmentImage = styled(motion.div)`
 
 const CommitmentText = styled(motion.div)`
   flex: 1;
+  width: 100%;
+  max-width: 100%;
+  
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
 `;
-
 const CommitmentTitle = styled(motion.h2)`
   font-size: 3rem;
   margin-bottom: 2rem;
   line-height: 1.2;
   text-transform: uppercase;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+  }
 `;
-
 const CommitmentDescription = styled.p`
   font-size: 1.1rem;
   margin-bottom: 2rem;
@@ -356,7 +369,7 @@ const AboutMe: React.FC = () => {
             <CommitmentDescription>
               Meine Mandanten profitieren von meinem tiefgreifenden Verständnis des deutschen Rechtssystems und meinem engagierten Einsatz für ihre Belange. Ich stehe Ihnen als zuverlässiger Partner zur Seite.
             </CommitmentDescription>
-            <ScheduleButton href="#kontakt">SCHEDULE A CALL</ScheduleButton>
+            <ScheduleButton href="#kontakt">TERMIN VEREINBAREN</ScheduleButton>
           </CommitmentText>
         </CommitmentSection>
       </div>
