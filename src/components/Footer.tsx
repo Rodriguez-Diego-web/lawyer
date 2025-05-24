@@ -149,14 +149,12 @@ const SubmitButton = styled.button`
 
 const BottomBar = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   margin-top: 4rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   
   @media (max-width: 768px) {
-    flex-direction: column;
     gap: 1rem;
     text-align: center;
   }
@@ -165,6 +163,15 @@ const BottomBar = styled.div`
 const FooterCopyright = styled(motion.div)`
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 `;
 
 const FooterLinks = styled(motion.div)`
@@ -183,6 +190,23 @@ const FooterLinks = styled(motion.div)`
   
   @media (max-width: 768px) {
     margin-top: 1rem;
+  }
+`;
+
+const DeveloperCredit = styled(motion.div)`
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  
+  a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+    text-decoration: none;
+    
+    &:hover {
+      color: white;
+    }
   }
 `;
 
@@ -314,18 +338,27 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            © {currentYear} LWTC™ | Alle Rechte vorbehalten
+            <div>© {currentYear} LWTC™ | Alle Rechte vorbehalten</div>
+            <FooterLinks
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <a href="/impressum">Impressum</a>
+              <a href="/datenschutz">Datenschutz</a>
+              <a href="/agb">AGB</a>
+            </FooterLinks>
           </FooterCopyright>
-          <FooterLinks
+          
+          <DeveloperCredit
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
           >
-            <a href="/impressum">Impressum</a>
-            <a href="/datenschutz">Datenschutz</a>
-            <a href="/agb">AGB</a>
-          </FooterLinks>
+            Made by <a href="https://rodriguez-web.de/" target="_blank" rel="noopener noreferrer">Rodriguez Web</a> | Diego Rodriguez
+          </DeveloperCredit>
         </BottomBar>
       </div>
     </FooterContainer>
