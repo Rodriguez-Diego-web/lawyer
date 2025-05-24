@@ -14,22 +14,23 @@ const SectionTitle = styled(motion.h2)`
   text-transform: uppercase;
 `;
 
-const IntroText = styled.div`
-  max-width: 800px;
-  margin: 0 auto 5rem;
-  text-align: center;
-  
-  h3 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-  }
-  
-  p {
-    font-size: 1.1rem;
-    color: var(--color-text-light);
-  }
-`;
+// IntroText-Komponente für zukünftige Implementierung
+// const IntroText = styled.div`
+//   max-width: 800px;
+//   margin: 0 auto 5rem;
+//   text-align: center;
+//
+//   h3 {
+//     font-size: 2rem;
+//     margin-bottom: 1.5rem;
+//     text-transform: uppercase;
+//   }
+//
+//   p {
+//     font-size: 1.1rem;
+//     color: var(--color-text-light);
+//   }
+// `;
 
 const CardGrid = styled(motion.div)`
   display: grid;

@@ -104,9 +104,10 @@ const ContactIcon = styled.div`
   color: white;
 `;
 
-const Newsletter = styled.div`
-  margin-top: 2rem;
-`;
+// Newsletter-Komponente für zukünftige Implementierung
+// const Newsletter = styled.div`
+//   margin-top: 2rem;
+// `;
 
 const InputContainer = styled.div`
   display: flex;

@@ -220,7 +220,7 @@ const Testimonials: React.FC = () => {
     }, 5000);
     
     return () => clearInterval(intervalId);
-  }, [currentIndex]);
+  }, [currentIndex, nextSlide]);
   
   // Get visible testimonials
   const visibleTestimonials = () => {

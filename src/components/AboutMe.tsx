@@ -223,7 +223,6 @@ const ScheduleButton = styled.a`
 const AboutMe: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const imageYTransform = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const textYTransform = useTransform(scrollYProgress, [0, 1], [0, 50]);
   
   return (
     <AboutContainer id="ueber-mich">
