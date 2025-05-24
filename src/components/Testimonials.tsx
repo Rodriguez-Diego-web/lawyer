@@ -214,6 +214,7 @@ const Testimonials: React.FC = () => {
   }, [itemsPerPage, testimonials.length]);
   
   // Auto-slide effect
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide();
